@@ -1,0 +1,23 @@
+.uk-navbar-container a {
+  color: white;
+}
+
+.uk-active {
+  background: #63009a;
+  border-radius: 0%;
+}
+
+.uk-navbar-container {
+  background-color: #7c00cd;
+}
+
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.camelcase-text {
+  text-transform: capitalize;
+}

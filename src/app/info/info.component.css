@@ -1,0 +1,21 @@
+.uk-card {
+  background-color: #474b4f;
+}
+
+h1, h2, h3, h4, p {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.discord-logo {
+  height: 4em;
+  width: auto;
+}
+
+.discord-logo-text {
+  height: 3.5em;
+  width: auto;
+}

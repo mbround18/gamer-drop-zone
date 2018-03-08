@@ -1,0 +1,11 @@
+.camelcase-text {
+  text-transform: capitalize;
+}
+
+.green-background {
+  background: green;
+}
+
+h1, h2, h3, h4, p {
+  color: white;
+}

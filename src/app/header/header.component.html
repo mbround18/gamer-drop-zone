@@ -1,0 +1,16 @@
+<nav class="uk-navbar uk-navbar-container uk-margin uk-width-1-2@l uk-align-center">
+  <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo" href="/">{{ title }}</a>
+    <div class="uk-navbar-left uk-navbar-container">
+      <ul class="uk-navbar-nav">
+        <li
+          *ngFor="let tabName of availableTabs"
+          [ngClass]="{'uk-active': activeTab === tabName}"
+          (click)="switchActiveTab(tabName)"
+        >
+          <a href="#" class="camelcase-text">{{ tabName }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
