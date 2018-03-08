@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ServerModel} from '../../models/server.model';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-server',
@@ -9,7 +10,7 @@ import {ServerModel} from '../../models/server.model';
 export class ServerComponent implements OnInit {
   @Input() server: ServerModel;
 
-  constructor() { }
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
