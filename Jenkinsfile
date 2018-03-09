@@ -4,8 +4,10 @@ pipeline {
     stage('build') {
       agent any
       steps {
-        sh '''ng build --prod --build-optimizer
-'''
+        sh 'sudo apt install npm nodejs'
+        sh 'sudo npm i -g @angular/cli yarn'
+        sh 'yarn install'
+        sh 'ng build --prod --build-optimizer'
       }
     }
     stage('Test') {
