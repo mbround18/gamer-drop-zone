@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'yarn install'
         sh 'ng build --progress false --prod --aot --build-optimizer'
-        archiveArtifacts 'dist/'
+        sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
       }
     }
   }
