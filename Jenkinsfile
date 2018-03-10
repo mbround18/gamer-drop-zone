@@ -18,7 +18,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Still Implementing'
-        sh 'ng test --progress=false --watch=false'
+        sh 'CHROME_BIN=/usr/bin/chromium-browser ng test --progress=false --watch=false'
         junit(testResults: '**/test-results.xml', allowEmptyResults: true)
       }
     }
