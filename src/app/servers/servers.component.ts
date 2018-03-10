@@ -1,20 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/operator/switchMap';
+import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import {ServerModel} from '../models/server.model';
+import {ServerService} from './server.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styleUrls: []
 })
 export class ServersComponent implements OnInit {
-  public servers: ServerModel[] = [
-    new ServerModel(1, '[SE][Cluster] Gamer Drop Zone [PVP][15x]', 'ark.boop.ninja:27015', true),
-    new ServerModel(1, '[Rag][Cluster] Gamer Drop Zone [PVP][15x]', 'ark.boop.ninja:27016', true)
-  ];
+  servers$: Observable<ServerModel[]>;
 
-  constructor() { }
+  private selectedId: number;
+
+  constructor(
+    private service: ServerService,
+    private route: ActivatedRoute
+    ) {
+  }
 
   ngOnInit() {
+    this.servers$ = this.route.paramMap
+      .switchMap((params: ParamMap) => {
+        // (+) before `params.get()` turns the string into a number
+        this.selectedId = +params.get('id');
+        return this.service.getServers();
+      });
   }
 
 }

@@ -1,17 +1,21 @@
-<div>
-  <a
-    [href]="'https://arkservers.net/server/' + server.ip"
-    target="_blank"
-  ><img
-    [src]="'https://arkservers.net/banner/' + server.ip + '/banner.png'"
-    alt=""
-  ></a>
-  <hr>
-  <app-mods [serverID]="server.id"></app-mods>
-  <hr>
-  <a
-    class="uk-button uk-button-primary uk-margin-top uk-margin-remove-bottom uk-align-left camelcase-text green-background"
-    [href]="sanitizer.bypassSecurityTrustResourceUrl('steam://connect/' + server.ip)"
-    target="_blank"
-  >Click to Join via Steam</a>
+<!--<router-outlet></router-outlet>-->
+<div class="uk-card uk-card-default uk-card-body" [id]="'server_id_' + server.id">
+  <h3 class="uk-card-title" style="color: white;">{{ server.name }}</h3>
+  <div>
+    <a
+      [href]="'https://arkservers.net/server/' + server.ip"
+      target="_blank"
+    ><img
+      [src]="'https://arkservers.net/banner/' + server.ip + '/banner.png'"
+      alt=""
+    ></a>
+    <hr>
+    <app-mods [serverID]="server.id"></app-mods>
+    <hr>
+    <a
+      class="uk-button uk-button-primary uk-margin-top uk-margin-remove-bottom uk-align-left camelcase-text green-background"
+      [href]="sanitizer.bypassSecurityTrustResourceUrl('steam://connect/' + server.ip)"
+      target="_blank"
+    >Click to Join via Steam</a>
+  </div>
 </div>

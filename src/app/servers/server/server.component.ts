@@ -5,10 +5,10 @@ import {DomSanitizer} from '@angular/platform-browser';
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  styleUrls: []
 })
 export class ServerComponent implements OnInit {
-  @Input() server: ServerModel;
+  @Input() server: ServerModel = new ServerModel(0, 'Server not found!', 'cat', true);
 
   constructor(public sanitizer: DomSanitizer) { }
 
