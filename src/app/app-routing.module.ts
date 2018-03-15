@@ -38,17 +38,17 @@ const appRoutes: Routes = [
   {
     path: 'server/:id',
     component: ServerComponent,
-    data: { }
+    data: {}
   },
   {path: '**', component: PageNotFoundComponent}
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(
       appRoutes,
       {
-        enableTracing: true, // <-- debugging purposes only
-
+        // enableTracing: true, // <-- debugging purposes only
       }
     )
   ],
