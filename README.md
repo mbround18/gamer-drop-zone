@@ -1,6 +1,8 @@
 # GamerDropZone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+This project is website code for [gamerdrop.zone](https://www.gamerdrop.zone) but you are more than welcome to:
+ 1) Clone the project, modify it, and deploy as your own.
+ 2) Contribute to the repository but if you do please follow the [code of conduct](CODE_OF_CONDUCT.md) 
 
 ## Development server
 
