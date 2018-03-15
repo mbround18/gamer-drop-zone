@@ -1,4 +1,4 @@
-import {by} from 'protractor';
+import {browser, by} from 'protractor';
 import {Helper} from '../helper';
 import {InfoCard} from '../lib/info.po';
 
@@ -41,6 +41,20 @@ describe('ark-boop-ninja InfoCard', () => {
     expect(page.getDiscordLogo().element(by.xpath('..')).getAttribute('id')).toBe('discord-link');
     expect(page.getDiscordLogoText().element(by.xpath('..')).getAttribute('id')).toBe('discord-link');
   });
+
+  // it('discord link has both logo and logo text', () => {
+  //   const start_url = browser.getCurrentUrl();
+  //   page.getDiscordLogo().click();
+  //   browser.getAllWindowHandles().then(function (handles) {
+  //     browser.switchTo().window(handles[1]);
+  //   });
+  //   // browser.switchTo(browser.getAllWindowHandles().last());
+  //   expect(browser.getCurrentUrl() === start_url).toBeFalsy();
+  //   expect(browser.getCurrentUrl()).toBe('https://discord.boop.ninja/');
+  //   // expect(page.getDiscordLogo().element(by.xpath('..')).getAttribute('id')).toBe('discord-link');
+  //   // expect(page.getDiscordLogoText().element(by.xpath('..')).getAttribute('id')).toBe('discord-link');
+  // });
+
 
 });
 

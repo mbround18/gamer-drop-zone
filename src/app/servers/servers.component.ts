@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ServerModel} from '../models/server.model';
 import {ServerService} from './server.service';
 import {Observable} from 'rxjs/Observable';
@@ -15,10 +15,8 @@ export class ServersComponent implements OnInit {
 
   private selectedId: number;
 
-  constructor(
-    private service: ServerService,
-    private route: ActivatedRoute
-    ) {
+  constructor(private service: ServerService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {

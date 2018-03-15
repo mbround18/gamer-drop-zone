@@ -10,7 +10,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class ServerComponent implements OnInit {
   @Input() server: ServerModel = new ServerModel(0, 'Server not found!', 'cat', true);
 
-  constructor(public sanitizer: DomSanitizer) { }
+  constructor(public sanitizer: DomSanitizer) {
+  }
 
   ngOnInit() {
   }

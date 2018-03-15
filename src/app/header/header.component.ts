@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, isDevMode, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -18,10 +18,14 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (isDevMode()) {
+      this.availableTabs.push('DevTab');
+    }
   }
 
   switchActiveTab($event) {
     this.activeTab = $event.toString();
   }
+
 
 }
