@@ -17,9 +17,9 @@ pipeline {
     }
     stage('Test') {
       steps {
-        echo 'Still Implementing'
-        sh '# CHROME_BIN=/usr/bin/chromium-browser ng test --browsers=ChromeHeadless --single-run --progress=false --watch=false'
-        junit(testResults: '**/test-results.xml', allowEmptyResults: true)
+        sh '''CHROME_BIN=/usr/bin/chromium-browser ng e2e  --watch=false --progress=false
+'''
+        junit(testResults: 'e2e/output/junitresults-**.xml', allowEmptyResults: true)
       }
     }
     stage('Deploy') {
