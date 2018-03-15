@@ -1,12 +1,15 @@
+import {Helper} from '../helper';
 import {AppPage} from '../lib/app.po';
 import {by} from 'protractor';
 
 describe('ark-boop-ninja App', () => {
+  let helper: Helper;
   let page: AppPage;
 
   beforeEach(() => {
+    helper = new Helper();
     page = new AppPage();
-    page.navigateTo();
+    helper.navigateToBase();
   });
 
   it('should display welcome message', () => {
