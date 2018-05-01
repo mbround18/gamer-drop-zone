@@ -9,7 +9,7 @@ cache:
   - node_modules/
 
 build:
-  stage: test
+  stage: build
   script:
    - npm install yarn
    - npm install @angular/cli
