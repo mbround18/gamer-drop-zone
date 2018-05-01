@@ -22,8 +22,10 @@ build:
 
 test_e2e:
   stage: test_e2e
-  script:
+  before_script:
+   - apt update
    - apt install chromium-browser -y
+  script:
    - yarn e2e
   artifacts:
     paths:
