@@ -22,7 +22,9 @@ build:
 
 test_e2e:
   stage: test_e2e
-  image: zenika/alpine-chrome
+  before_script:
+   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   - dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
   script:
    - yarn e2e
   artifacts:
