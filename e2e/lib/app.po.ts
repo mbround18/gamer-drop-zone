@@ -15,9 +15,9 @@ export class AppPage {
     return element(by.css('app-info'));
   }
 
-  getAppServers() {
-    return element(by.css('app-servers'));
-  }
+  // getAppServers() {
+  //   return element(by.css('app-servers'));
+  // }
 
   getMainDiv() {
     return element(by.id('main'));

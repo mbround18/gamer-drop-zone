@@ -1,0 +1,30 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+
+cache:
+  paths:
+  - node_modules/
+
+build:
+  stage: test
+  script:
+   - npm install yarn
+   - npm install @angular/cli
+   - yarn install
+   - yarn build
+  artifacts:
+    paths:
+      - dist/*
+    expire_in: 1 week
+
+test_e2e:
+  stage: test_e2e
+  script:
+   - yarn e2e
+  artifacts:
+    paths:
+      - e2e/output/*
+    expire_in: 1 week

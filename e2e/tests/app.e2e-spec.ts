@@ -24,14 +24,14 @@ describe('ark-boop-ninja App', () => {
     expect(page.getAppInfo().isPresent()).toBeTruthy();
   });
 
-  it('should contain app-servers', () => {
-    expect(page.getAppServers().isPresent()).toBeTruthy();
-  });
+  // it('should contain app-servers', () => {
+  //   expect(page.getAppServers().isPresent()).toBeTruthy();
+  // });
 
   it('main contains app-header, app-info, app-servers', () => {
     expect(page.getMainDiv().element(by.css('app-header')).isPresent()).toBeTruthy();
     expect(page.getMainDiv().element(by.css('app-info')).isPresent()).toBeTruthy();
-    expect(page.getMainDiv().element(by.css('app-servers')).isPresent()).toBe(true);
+    expect(page.getMainDiv().element(by.css('app-servers')).isPresent()).toBeFalsy();
   });
   // it('', () => {
   //
